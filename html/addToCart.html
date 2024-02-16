@@ -50,36 +50,6 @@
         }
 
 
-        function  pluse()
-        {
-            
-            var max_qua = localStorage.getItem('productMaxQuantity');
-            var max_min = document.getElementById('max_min');
-
-            console.log(max_qua)
-            if(max_min.value < parseInt(max_qua))
-            {
-                var max_min_value = parseInt(max_min.value);
-                max_min_value++;
-                max_min.value = max_min_value;
-            }
-        }
-
-
-        function  minus()
-        {
-            
-            var max_qua = localStorage.getItem('productMaxQuantity');
-            var max_min = document.getElementById('max_min');
-
-            console.log(max_qua)
-            if(max_min.value > 1)
-            {
-                var max_min_value = parseInt(max_min.value);
-                max_min_value--;
-                max_min.value = max_min_value;
-            }
-        }
         
     </script>
 </head>
