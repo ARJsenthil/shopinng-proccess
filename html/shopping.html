@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./bootstrap-4/css/bootstrap.min.css">
+    <title>Document</title>
+
+
+    <script>
+        
+        function cl()
+        {
+            var img = document.getElementById('img');
+            var product_name = document.getElementById('product_name');
+            var product_price = document.getElementById('product_price');
+            var product_org_price = document.getElementById('product_org_price');
+            var product_discount = document.getElementById('product_discount');
+            var product_dis_type = document.getElementById('product_dis_type');
+            var product_des = document.getElementById('product_des');
+
+            var name = localStorage.getItem('productName');
+            var price = localStorage.getItem('productPrice');
+            var org_price = localStorage.getItem('productOrgPrice');
+            var discount = localStorage.getItem('productDis');
+            var disType = localStorage.getItem('discountType');
+            var des = localStorage.getItem('productDesc');
+
+
+            product_name.innerHTML = name;
+            product_price.innerHTML = Math.round(price);
+            product_org_price.innerHTML = Math.round(org_price);
+            product_discount.innerHTML = discount;
+            product_dis_type.innerHTML = disType+'off';
+            product_des.innerHTML = des;
+
+            
+            img.src = localStorage.getItem('productImgSrc');
+        }
+
+
+        function  pluse()
+        {
+            
+            var max_qua = localStorage.getItem('productMaxQuantity');
+            var max_min = document.getElementById('max_min');
+
+            console.log(max_qua)
+            if(max_min.value < parseInt(max_qua))
+            {
+                var max_min_value = parseInt(max_min.value);
+                max_min_value++;
+                max_min.value = max_min_value;
+            }
+        }
+
+
+        function  minus()
+        {
+            
+            var max_qua = localStorage.getItem('productMaxQuantity');
+            var max_min = document.getElementById('max_min');
+
+            console.log(max_qua)
+            if(max_min.value > 1)
+            {
+                var max_min_value = parseInt(max_min.value);
+                max_min_value--;
+                max_min.value = max_min_value;
+            }
+        }
+
+
+        function addToCart()
+        {
+            window.location.href = './html/addToCart.html'
+        }
+        
+    </script>
+</head>
+<body onload="cl()">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-info">
+        <a class="navbar-brand" href="#">Navbar</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Link</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
+                Dropdown
+              </a>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Something else here</a>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled">Disabled</a>
+            </li>
+          </ul>
+          <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          </form>
+        </div>
+      </nav>
+      <div class="container">
+        <div class="row">
+            <div class="col-5 bg-dark text-white    " style="height: 500px;">
+
+                <h5 class="py-2">Product Image</h5>
+                <img src="" alt="" id="img" class="w-100" />
+                
+            </div>
+            <div class="col-7 position-relative" style="height: 500px; background-color: rgba(59, 216, 80, 0.99);">
+            
+                <h1 id="product_name" style="text-transform: uppercase; padding-top: 30px;"></h1>
+                <h3 class="d-flex" style="gap: 10px;"><span id="product_price"></span><del style="color: rgba(0, 0, 0, 0.479);" id="product_org_price"></del><span style="color: green;"><span id="product_discount"></span><span id="product_dis_type"></span></span> </h3>
+                <p id="product_des" style="color: rgba(0, 0, 0, 0.486);"></p>
+                <div class="max-min" style="position: absolute; bottom: 100px;"><button onclick="pluse()">+</button><input type="text" name="" style="width: 30px;" id="max_min" value="1" readonly /><button onclick="minus()">-</button></div>
+            
+                <button class="" style="position: absolute; bottom: 10px;padding: 10px 20px;" onclick="addToCart()">Add To Cart</button>
+            </div>
+        </div>
+      </div>
+</body>
+</html>

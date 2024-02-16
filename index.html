@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="index.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <form class="form" action="./html/shopping.html">
+        <table>
+            <tr><td colspan="2"><h1>ADD PRODUCT</h1></td></tr>
+            <tr>
+                <td><label for="product_name">Product Name</label></td>
+                <td><input type="text" name="product_name" id="product_name" required></td>
+            </tr>
+            <tr>
+                <td><label for="product_desc">Product Description</label></td>
+                <td><textarea name="product_desc" id="product_desc" cols="30" rows="10" required></textarea></td>
+            </tr>
+            <tr>
+                <td rowspan="2"><label for="product_img">Product Image</label></td>
+                <td><input type="file" name="product_img" id="product_img" onchange="productImg(event)" required></td>
+            </tr>
+            <tr>
+                <td><img src=""  alt="" id="productimg" style="max-width: 250px;" /></td>
+            </tr>
+            <tr>
+                <td><label for="product_org_price">Product Orginal Price</label></td>
+                <td><input type="text" name="product_org_price" id="product_org_price" oninput="productOrgPrice()" required></td>
+            </tr>
+            <tr>
+                <td><label for="product_dis_type">Product Discount Type</label></td>
+                <td>
+                    <select name="product_dis_type" id="discount_type" onclick="disTypeSelect()">
+                        <option value="-1"> - - select discount type - -</option>
+                        <option value="%">Percentage %</option>
+                        <option value="flat">Flat</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="product_dis">Product Discount Price</label></td>
+                <td><input type="number" name="product_dis" id="product_dis" oninput="disPriceCount()" required></td>
+            </tr>
+            <tr>
+                <td><label for="product__price">Product Price</label></td>
+                <td><input type="text" name="product_price" id="product_price" readonly></td>
+            </tr>
+            <tr>
+                <td><label for="product_max_quantity">Product Max Quantity</label></td>
+                <td><input type="number" name="product_max_quantity" id="product_max_quantity" required></td>
+            </tr>
+            <tr>
+                <td colspan="2"><button onclick="addProduct()">Add Product</button></td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>
