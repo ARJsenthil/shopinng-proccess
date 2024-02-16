@@ -7,9 +7,9 @@
     <title>Document</title>
 </head>
 <body>
-    <form class="form" action="./html/shopping.html">
+    <form class="form" action="./html/shopping.html" style="position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);">
         <table>
-            <tr><td colspan="2"><h1>ADD PRODUCT</h1></td></tr>
+            <tr><td colspan="2"><h1 style="text-align: center;">ADD PRODUCT</h1></td></tr>
             <tr>
                 <td><label for="product_name">Product Name</label></td>
                 <td><input type="text" name="product_name" id="product_name" required></td>
@@ -52,7 +52,7 @@
                 <td><input type="number" name="product_max_quantity" id="product_max_quantity" required></td>
             </tr>
             <tr>
-                <td colspan="2"><button onclick="addProduct()">Add Product</button></td>
+                <td colspan="2" class=""><button style="padding: 10px 20px; margin-left: 90px; margin-top: 30px;" onclick="addProduct()">Add Product</button></td>
             </tr>
         </table>
     </div>
