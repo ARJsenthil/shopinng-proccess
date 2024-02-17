@@ -30,7 +30,14 @@
             product_name.innerHTML = name;
             product_price.innerHTML = '$'+Math.round(price);
             product_org_price.innerHTML = '$'+Math.round(org_price);
-            product_discount.innerHTML = discount;
+            if(discount == '%')
+            {
+              product_discount.innerHTML = discount;
+            }
+            else
+            {
+              product_discount.innerHTML = '$'+discount;
+            }
             product_dis_type.innerHTML = disType+'off';
             product_des.innerHTML = des;
 
