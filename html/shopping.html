@@ -31,8 +31,8 @@
             localStorage.setItem('maxQua', max_min_value.value);
 
             product_name.innerHTML = name;
-            product_price.innerHTML = '$'+price;
-            product_org_price.innerHTML = '$'+org_price;
+            product_price.innerHTML = '₹'+price;
+            product_org_price.innerHTML = '₹'+org_price;
             if(disType == '%')
             {
               product_discount.innerHTML = discount;
@@ -40,7 +40,7 @@
             }
             else
             {
-              product_discount.innerHTML = '$'+discount;
+              product_discount.innerHTML = '₹'+discount;
               product_dis_type.innerHTML = 'off';
             }
             product_des.innerHTML = des;
@@ -49,11 +49,11 @@
             img.src = localStorage.getItem('productImgSrc');
 
             var a = localStorage.getItem('maxQua');
-            product_price.innerHTML = '$'+localStorage.getItem('productPrice') * a;
-            product_org_price.innerHTML = '$'+localStorage.getItem('productOrgPrice') * a;
+            product_price.innerHTML = '₹'+localStorage.getItem('productPrice') * a;
+            product_org_price.innerHTML = '₹'+localStorage.getItem('productOrgPrice') * a;
             if(localStorage.getItem('discountType') == 'flat')
             {
-              product_discount.innerHTML = '$'+localStorage.getItem('productDis') * a;
+              product_discount.innerHTML = '₹'+localStorage.getItem('productDis') * a;
             }
             
         }
@@ -75,11 +75,11 @@
 
                 localStorage.setItem('maxQua', max_min_value);
                 var a = localStorage.getItem('maxQua');
-                product_price.innerHTML = '$'+Math.round(localStorage.getItem('productPrice')) * a;
-                product_org_price.innerHTML = '$'+Math.round(localStorage.getItem('productOrgPrice')) * a;
+                product_price.innerHTML = '₹'+Math.round(localStorage.getItem('productPrice')) * a;
+                product_org_price.innerHTML = '₹'+Math.round(localStorage.getItem('productOrgPrice')) * a;
                 if(localStorage.getItem('discountType') == 'flat')
                 {
-                  product_discount.innerHTML = '$'+localStorage.getItem('productDis') * a;
+                  product_discount.innerHTML = '₹'+localStorage.getItem('productDis') * a;
                 }
             }
 
@@ -103,11 +103,11 @@
 
                 localStorage.setItem('maxQua', max_min_value);
                 var a = localStorage.getItem('maxQua');
-                product_price.innerHTML = '$'+Math.round(localStorage.getItem('productPrice')) * a;
-                product_org_price.innerHTML = '$'+Math.round(localStorage.getItem('productOrgPrice')) * a;
+                product_price.innerHTML = '₹'+Math.round(localStorage.getItem('productPrice')) * a;
+                product_org_price.innerHTML = '₹'+Math.round(localStorage.getItem('productOrgPrice')) * a;
                 if(localStorage.getItem('discountType') == 'flat')
                 {
-                  product_discount.innerHTML = '$'+localStorage.getItem('productDis') * a;
+                  product_discount.innerHTML = '₹'+localStorage.getItem('productDis') * a;
                 }
             }
 

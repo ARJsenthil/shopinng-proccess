@@ -33,8 +33,8 @@
 
             if(maxQua > 1){product_name.innerHTML = name;}
             else{product_name.innerHTML = name;}
-            product_price.innerHTML = '$'+ maxQua * price;
-            product_org_price.innerHTML = '$'+ maxQua * org_price;
+            product_price.innerHTML = '₹'+ maxQua * price;
+            product_org_price.innerHTML = '₹'+ maxQua * org_price;
             if(disType == '%')
             {
               product_discount.innerHTML = discount;
@@ -42,7 +42,7 @@
             }
             else
             {
-              product_discount.innerHTML = '$'+ maxQua * discount;
+              product_discount.innerHTML = '₹'+ maxQua * discount;
               product_dis_type.innerHTML = 'off';
             }
             product_des.innerHTML = des;
@@ -56,10 +56,10 @@
 
             var c = org_price - price;
             var pro_dis = document.getElementById('pro_dis');
-            product_price1.innerHTML = '$' + maxQua * price;
-            product_org_price1.innerHTML = '$' + maxQua * org_price;
-            pro_dis.innerHTML = '-$' + maxQua * c;
-            del_cost.innerHTML = '$' + maxQua * 40;
+            product_price1.innerHTML = '₹' + maxQua * price;
+            product_org_price1.innerHTML = '₹' + maxQua * org_price;
+            pro_dis.innerHTML = '-₹' + maxQua * c;
+            del_cost.innerHTML = '₹' + maxQua * 40;
         }
         
     </script>
