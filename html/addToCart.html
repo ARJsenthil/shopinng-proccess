@@ -30,7 +30,7 @@
             var maxQua = localStorage.getItem('maxQua');
 
 
-            if(maxQua > 1){product_name.innerHTML = name+'('+maxQua+')';}
+            if(maxQua > 1){product_name.innerHTML = name;}
             else{product_name.innerHTML = name;}
             product_price.innerHTML = '$'+ maxQua * price;
             product_org_price.innerHTML = '$'+ maxQua * org_price;
