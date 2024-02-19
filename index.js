@@ -82,7 +82,7 @@ function disTypeSelect()
     }
     else
     {
-        
+
         discount_type.style = 'border-color: red;';
         var d = parseInt(product_org_price.value) ;
         product_price.value = d;
@@ -99,8 +99,6 @@ function productOrgPrice()
 
 
     localStorage.setItem('discountType', discount_type.value);
-    localStorage.setItem('productOrgPrice', product_org_price.value);
-    localStorage.setItem('productDis', product_dis.value);
     localStorage.setItem('productPrice', product_price.value);
 
     if(discount_type.value == '%')
@@ -134,7 +132,7 @@ function productOrgPrice()
     }
     else
     {
-        
+
         discount_type.style = 'border-color: red;';
         var d = parseInt(product_org_price.value) ;
         product_price.value = d;
@@ -145,12 +143,12 @@ function productImg(event)
 {
     console.log('event --- ',event.target.files[0]);
     var reader = new FileReader();
-    
+
     console.log(reader.result);
     reader.onload = function(){
         var output = document.getElementById('productimg');
         output.src = reader.result;
-        
+
         localStorage.setItem('productImgSrc', reader.result);
 
     };
@@ -165,10 +163,15 @@ function addProduct()
     var product_desc = document.getElementById('product_desc');
     var product_max_quantity = document.getElementById('product_max_quantity');
     var product_price = document.getElementById('product_price');
+    var product_dis = document.getElementById('product_dis');
+    var product_org_price = document.getElementById('product_org_price');
 
 
     localStorage.setItem('productName', product_name.value);
     localStorage.setItem('productDesc', product_desc.value);
     localStorage.setItem('productMaxQuantity', product_max_quantity.value);
-    localStorage.setItem('productPrice', product_price.value);
+    localStorage.setItem('productPrice', Math.round(product_price.value));
+    localStorage.setItem('discountType', discount_type.value);
+    localStorage.setItem('productOrgPrice', Math.round(product_org_price.value));
+    localStorage.setItem('productDis', Math.round(product_dis.value));
 }

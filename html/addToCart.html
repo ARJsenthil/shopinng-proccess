@@ -29,10 +29,8 @@
 
 
             product_name.innerHTML = name;
-            product_price.innerHTML = '$'+Math.round(price);
-            product_price1.innerHTML = '$'+price;
-            product_org_price1.innerHTML = '$'+org_price;
-            product_org_price.innerHTML = '$'+Math.round(org_price);
+            product_price.innerHTML = '$'+price;
+            product_org_price.innerHTML = '$'+org_price;
             if(disType == '%')
             {
               product_discount.innerHTML = discount;
@@ -53,40 +51,10 @@
 
             var c = org_price - price;
             var pro_dis = document.getElementById('pro_dis');
-            pro_dis.innerHTML = '-$'+Math.round(c);
+            product_price1.innerHTML = '$'+price;
+            product_org_price1.innerHTML = '$'+org_price;
+            pro_dis.innerHTML = '-$'+c;
 
-        }
-
-
-        function  pluse()
-        {
-            
-            var max_qua = localStorage.getItem('productMaxQuantity');
-            var max_min = document.getElementById('max_min');
-
-            console.log(max_qua)
-            if(max_min.value < parseInt(max_qua))
-            {
-                var max_min_value = parseInt(max_min.value);
-                max_min_value++;
-                max_min.value = max_min_value;
-            }
-        }
-
-
-        function  minus()
-        {
-            
-            var max_qua = localStorage.getItem('productMaxQuantity');
-            var max_min = document.getElementById('max_min');
-
-            console.log(max_qua)
-            if(max_min.value > 1)
-            {
-                var max_min_value = parseInt(max_min.value);
-                max_min_value--;
-                max_min.value = max_min_value;
-            }
         }
         
     </script>
@@ -129,9 +97,9 @@
       </nav>
       
       <div class="p-5">
-        <div class="row">
+        <div class="row m-auto">
             <img src="" alt="" class="col-md-3 col-sm-5" id="img"/>
-            <div class="col-md-5 col-sm-7" style="background-color: rgba(0, 128, 0, 0.445);">
+            <div class="col-md-5 col-sm-7 p-lg-3 p-1" style="background-color: rgba(0, 128, 0, 0.445);">
 
                 <h1 id="product_name" style="text-transform: uppercase;"></h1>
                 <p id="product_des" style="color: rgba(0, 0, 0, 0.79);"></p>

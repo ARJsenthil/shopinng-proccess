@@ -18,6 +18,7 @@
             var product_discount = document.getElementById('product_discount');
             var product_dis_type = document.getElementById('product_dis_type');
             var product_des = document.getElementById('product_des');
+            var max_min_value = document.getElementById('max_min');
 
             var name = localStorage.getItem('productName');
             var price = localStorage.getItem('productPrice');
@@ -27,13 +28,11 @@
             var des = localStorage.getItem('productDesc');
 
 
-            localStorage.setItem('maxQua', max_min_value);
+            localStorage.setItem('maxQua', max_min_value.value);
 
-
-            
             product_name.innerHTML = name;
-            product_price.innerHTML = '$'+Math.round(price);
-            product_org_price.innerHTML = '$'+Math.round(org_price);
+            product_price.innerHTML = '$'+price;
+            product_org_price.innerHTML = '$'+org_price;
             if(disType == '%')
             {
               product_discount.innerHTML = discount;
@@ -50,8 +49,8 @@
             img.src = localStorage.getItem('productImgSrc');
 
             var a = localStorage.getItem('maxQua');
-            product_price.innerHTML = '$'+Math.round(localStorage.getItem('productPrice')) * a;
-            product_org_price.innerHTML = '$'+Math.round(localStorage.getItem('productOrgPrice')) * a;
+            product_price.innerHTML = '$'+localStorage.getItem('productPrice') * a;
+            product_org_price.innerHTML = '$'+localStorage.getItem('productOrgPrice') * a;
             if(localStorage.getItem('discountType') == 'flat')
             {
               product_discount.innerHTML = '$'+localStorage.getItem('productDis') * a;
