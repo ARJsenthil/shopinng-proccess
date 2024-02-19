@@ -20,6 +20,7 @@
             var product_dis_type = document.getElementById('product_dis_type');
             var product_des = document.getElementById('product_des');
             var item_count = document.getElementById('item_count');
+            var del_cost = document.getElementById('del_cost');
 
             var name = localStorage.getItem('productName');
             var price = localStorage.getItem('productPrice');
@@ -58,7 +59,7 @@
             product_price1.innerHTML = '$' + maxQua * price;
             product_org_price1.innerHTML = '$' + maxQua * org_price;
             pro_dis.innerHTML = '-$' + maxQua * c;
-
+            del_cost.innerHTML = '$' + maxQua * 40;
         }
         
     </script>
@@ -113,7 +114,7 @@
                 <h6 class="pt-3 pb-3">PRICE DETAILS</h6>
                 <p class="row"><span class="col-7">Price Item(<span id="item_count"></span>)</span><span class="col-5" id="product_org_price1"></span></p>
                 <p class="row"><span class="col-7">Discount</span><span class="col-5" style="color: green" id="pro_dis"></span></p>
-                <p class="row"><span class="col-7" >Deleviry Cost</span><span style="color: green"  class="col-5" id=""><del>$40</del> Free</span></p>
+                <p class="row"><span class="col-7" >Deleviry Cost</span><span style="color: green"  class="col-5" id=""><del id="del_cost" style="color: rgba(0, 0, 0, 0.79));"></del> Free</span></p>
                 <p class="row"><span class="col-7">Total Cost</span><span class="col-5" id="product_price1"></span></p>
             </div>
         </div>
