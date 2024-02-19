@@ -171,6 +171,7 @@ function addProduct()
     localStorage.setItem('productDesc', product_desc.value);
     localStorage.setItem('productMaxQuantity', product_max_quantity.value);
     localStorage.setItem('productPrice', Math.round(product_price.value));
+    console.log(Math.round(product_price.value));
     localStorage.setItem('discountType', discount_type.value);
     localStorage.setItem('productOrgPrice', Math.round(product_org_price.value));
     localStorage.setItem('productDis', Math.round(product_dis.value));
