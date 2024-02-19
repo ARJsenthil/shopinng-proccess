@@ -20,13 +20,13 @@ function disPriceCount()
     {
         var d = parseInt(product_org_price.value) - (parseInt(product_org_price.value) * (parseInt(product_dis.value)/100));
         console.log('%', d);
-        product_price.value = d;
+        product_price.value = Math.round(d);
     }
     else if(discount_type.value == 'flat')
     {
         var d = parseInt(product_org_price.value) - parseInt(product_dis.value);
         console.log('Flat', d);
-        product_price.value = d;
+        product_price.value = Math.round(d);
     }
     else
     {
@@ -57,12 +57,12 @@ function disTypeSelect()
         {
             var d = parseInt(product_org_price.value) - (parseInt(product_org_price.value) * (parseInt(product_dis.value)/100));
             console.log('%', d);
-            product_price.value = d;
+            product_price.value = Math.round(d);
         }
         else
         {
             var d = product_org_price.value;
-            product_price.value = d;
+            product_price.value = Math.round(d);
 
         }
     }
@@ -72,12 +72,12 @@ function disTypeSelect()
         {
             var d = parseInt(product_org_price.value) - parseInt(product_dis.value);
             console.log('Flat', d);
-            product_price.value = d;
+            product_price.value = Math.round(d);
         }
         else
         {
             var d = product_org_price.value;
-            product_price.value = d;
+            product_price.value = Math.round(d);
         }
     }
     else
@@ -85,7 +85,7 @@ function disTypeSelect()
 
         discount_type.style = 'border-color: red;';
         var d = parseInt(product_org_price.value) ;
-        product_price.value = d;
+        product_price.value = Math.round(d);
     }
 }
 
@@ -107,12 +107,12 @@ function productOrgPrice()
         {
             var d = parseInt(product_org_price.value) - (parseInt(product_org_price.value) * (parseInt(product_dis.value)/100));
             console.log('%', d);
-            product_price.value = d;
+            product_price.value = Math.round(d);
         }
         else
         {
             var d = product_org_price.value;
-            product_price.value = d;
+            product_price.value = Math.round(d);
 
         }
     }
@@ -122,12 +122,12 @@ function productOrgPrice()
         {
             var d = parseInt(product_org_price.value) - parseInt(product_dis.value);
             console.log('Flat', d);
-            product_price.value = d;
+            product_price.value = Math.round(d);
         }
         else
         {
             var d = product_org_price.value;
-            product_price.value = d;
+            product_price.value = Math.round(d);
         }
     }
     else
@@ -170,9 +170,8 @@ function addProduct()
     localStorage.setItem('productName', product_name.value);
     localStorage.setItem('productDesc', product_desc.value);
     localStorage.setItem('productMaxQuantity', product_max_quantity.value);
-    localStorage.setItem('productPrice', Math.round(product_price.value));
-    console.log(Math.round(product_price.value));
+    localStorage.setItem('productPrice', product_price.value);
     localStorage.setItem('discountType', discount_type.value);
-    localStorage.setItem('productOrgPrice', Math.round(product_org_price.value));
-    localStorage.setItem('productDis', Math.round(product_dis.value));
+    localStorage.setItem('productOrgPrice', product_org_price.value);
+    localStorage.setItem('productDis', product_dis.value);
 }
