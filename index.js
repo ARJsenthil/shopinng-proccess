@@ -177,7 +177,6 @@ function addProduct()
 
     if(discount_type.value == '-1')
     {
-    localStorage.setItem('productOrgPrice', '');
     localStorage.setItem('productDis', '');
     localStorage.setItem('discountType', '');
     }
