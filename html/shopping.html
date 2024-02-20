@@ -79,7 +79,7 @@
                 localStorage.setItem('maxQua', max_min_value);
                 var a = localStorage.getItem('maxQua');
                 product_price.innerHTML = '₹'+Math.round(localStorage.getItem('productPrice')) * a;
-                if(disType.value == '%' || disType.value == 'flat')
+                if(disType == '%' || disType == 'flat')
                 {
                   product_org_price.innerHTML = '₹'+Math.round(localStorage.getItem('productOrgPrice')) * a;
                 }
@@ -110,7 +110,10 @@
                 localStorage.setItem('maxQua', max_min_value);
                 var a = localStorage.getItem('maxQua');
                 product_price.innerHTML = '₹'+Math.round(localStorage.getItem('productPrice')) * a;
-                
+                if(disType == '%' || disType == 'flat')
+                {
+                  product_org_price.innerHTML = '₹'+Math.round(localStorage.getItem('productOrgPrice')) * a;
+                }
                 if(localStorage.getItem('discountType') == 'flat')
                 {
                   product_discount.innerHTML = '₹'+localStorage.getItem('productDis') * a;
