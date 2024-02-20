@@ -49,7 +49,7 @@
 
             var a = localStorage.getItem('maxQua');
             product_price.innerHTML = '₹'+localStorage.getItem('productPrice') * a;
-            if(disType.value == '%' || disType.value == 'flat')
+            if(disType != '')
             {
               product_org_price.innerHTML = '₹'+localStorage.getItem('productOrgPrice') * a;
               product_org_price.innerHTML = '₹'+org_price;
@@ -110,10 +110,7 @@
                 localStorage.setItem('maxQua', max_min_value);
                 var a = localStorage.getItem('maxQua');
                 product_price.innerHTML = '₹'+Math.round(localStorage.getItem('productPrice')) * a;
-                if(disType.value == '%' || disType.value == 'flat')
-                {
-                  product_org_price.innerHTML = '₹'+Math.round(localStorage.getItem('productOrgPrice')) * a;
-                }
+                
                 if(localStorage.getItem('discountType') == 'flat')
                 {
                   product_discount.innerHTML = '₹'+localStorage.getItem('productDis') * a;
