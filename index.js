@@ -53,6 +53,7 @@ function disTypeSelect()
 
     if(discount_type.value == '%')
     {
+        product_dis.disabled = false;
         if(product_dis.value)
         {
             var d = parseInt(product_org_price.value) - (parseInt(product_org_price.value) * (parseInt(product_dis.value)/100));
@@ -68,6 +69,7 @@ function disTypeSelect()
     }
     else if(discount_type.value == 'flat')
     {
+        product_dis.disabled = false;
         if(product_dis.value)
         {
             var d = parseInt(product_org_price.value) - parseInt(product_dis.value);
@@ -82,6 +84,7 @@ function disTypeSelect()
     }
     else
     {
+        product_dis.disabled = true;
 
         discount_type.style = 'border-color: red;';
         var d = parseInt(product_org_price.value) ;
